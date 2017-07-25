@@ -1,24 +1,37 @@
 <div class="container">
-  <img src="../assets/main-big.png" alt="Big logo">
-  <div class="form">
-    <form class="" action="index.html" method="post">
-      <label for="email-input"></label>
-      <input type="email" name="email-input" placeholder="Email">
-      <br>
+  <div class="middle-content">
 
-      <label for="username-input"></label>
-      <input type="text" name="username-input" placeholder="Username">
-      <br>
+    <h2>Create your (insert name here) Account</h2>
+    <div class="content">
+      <div class="blurb">
+        <h3>Only One Account Needed</h3>
+        <p>Login and access your stats from many games in one convenient place</p>
+      </div>
+      <div class="blurb">
+        <h3>Join Regional Leaderboards</h3>
+        <p>Enter our regional leaderboards and compare your rank against others from your country, state or city.</p>
+      </div>
+      <div class="blurb">
+        <h3>Get Deep Insights</h3>
+        <p>Login to view your game profiles and get a detailed overview of your stats, visit often and we will track your process over time.</p>
+      </div>
+    </div>
+    <div class="form">
+      <form class="" action="index.html" method="post">
+        <label for="username-input"></label>
+        <input type="text" name="username-input" [(ngModel)]="usernameValue" placeholder="Username">
+        <br>
 
-      <label for="password-input"></label>
-      <input type="password" name="password-input" placeholder="Password">
-      <br>
+        <label for="email-input"></label>
+        <input type="email" name="email-input" [(ngModel)]="emailValue" placeholder="Email">
+        <br>
 
-      <button class="register-btn" type="submit" name="button">Register</button>
-    </form>
+        <label for="password-input"></label>
+        <input type="password" name="password-input" [(ngModel)]="passwordValue" placeholder="Password">
+        <br>
 
-    <a href="login">Already have an account?</a>
-    <button class="bttm-btn" name="button">Login</button>
-
+        <button class="register-btn" type="submit" (click)="doSignUp()" name="button">Register</button>
+      </form>
+    </div>
   </div>
 </div>

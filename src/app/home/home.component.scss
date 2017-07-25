@@ -1,0 +1,73 @@
+.colms{
+  padding: 44px;
+  .news-title{
+    color: #fff;
+    background-color: #151515;
+    height: 54px;
+    border-radius: 3px;
+    border: 1px solid #030303;
+    padding:6px;
+    padding-left: 20px;
+  }
+  .white-text{
+    color: #fff;
+    font-size: 20px;
+  }
+  .news-article{
+    color: #fff;
+    background-color: #272727;
+    border-radius: 3px;
+    margin-top: 24px;
+    header{
+      padding-left: 20px;
+      padding-top: 1px;
+    }
+    .pubg-img{
+      width: 672px;
+      height: 421px;
+      background-image: url('../../assets/pubg_bg.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .ow-img{
+      width: 672px;
+      height: 421px;
+      background-image: url('../../assets/overwatch_bg.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .fh-img{
+      width: 672px;
+      height: 421px;
+      background-image: url('../../assets/forhonor_bg.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .td-img{
+      width: 672px;
+      height: 421px;
+      background-image: url('../../assets/division_bg.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.list-group{
+  background-color: #222222;
+  border: 1px solid #222222;
+  border-radius: 3px;
+  .list{
+    border-bottom: 1px solid #282828;
+    width: 100%;
+    padding: 15px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+.list:hover{
+  text-decoration: none;
+  border-radius: 3px;
+  background-color: #484848;
+}
