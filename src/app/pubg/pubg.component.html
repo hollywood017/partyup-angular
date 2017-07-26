@@ -1,3 +1,6 @@
-<p>
-  pubg works!
-</p>
+<form class="white" action="index.html" method="get">
+  <h4>Insert PUBG Nickname</h4>
+  <label for="pubg-input"></label>
+  <input type="text" name="pubg-input" [(ngModel)]="pubgNameValue" placeholder="PUBG Nickname">
+  <button class="" type="submit" (click)="doGetStats()" name="button">Enter</button>
+</form>

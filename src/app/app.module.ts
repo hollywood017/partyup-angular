@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
+import { PubgService } from './services/pubg.service';
 import { AuthService } from './services/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,11 @@ import { PubgComponent } from './pubg/pubg.component';
     FormsModule,
     HttpModule
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService,
+    PubgService
+  ],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Subject } from 'rxjs/Subject';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
+
+  private loggedInSource = new Subject<any>();
+  logged$ = this.loggedInSource.asObservable();
 
   constructor(
       private httpThang: Http
@@ -11,9 +16,10 @@ export class AuthService {
   //POST signup
   //an argument for each "req.body" in the API route
   signup(theUsername, theEmail, thePassword){
+
     return this.httpThang
     .post(
-      'http://localhost:3000/api/signup',
+      environment.apiBase + '/api/signup',
 
       //Form body information to send to the back end(req.body)
       {
@@ -28,14 +34,19 @@ export class AuthService {
     //convert observable to a promise
     .toPromise()
     .then(res => res.json())
+    .then((userInfo) => {
+      this.loginStatus(userInfo);
+      return userInfo;
+    })
   }
 
 
   //POST login
   login(theEmail, thePassword) {
+    console.log(environment.apiBase);
     return this.httpThang
     .post(
-      'http://localhost:3000/api/login',
+      environment.apiBase + '/api/login',
 
       //Form body information to send to the back end (req.body)
       {
@@ -50,6 +61,10 @@ export class AuthService {
     .toPromise()
     //parse the JSON
     .then(res => res.json())
+    .then((userInfo) => {
+      this.loginStatus(userInfo);
+      return userInfo;
+    })
   }//close login
 
 
@@ -57,7 +72,7 @@ export class AuthService {
   logout(){
     return this.httpThang
     .post(
-      'http://localhost:3000/api/logout',
+      environment.apiBase + '/api/logout',
 
       //Nothing to send to the back end (req.body)
       {},
@@ -67,6 +82,10 @@ export class AuthService {
     .toPromise()
     //parse the JSON
     .then(res => res.json())
+    .then((userInfo) => {
+      this.loginStatus(false);
+      return userInfo;
+    })
   }//close logout
 
 
@@ -74,13 +93,21 @@ export class AuthService {
   checklogin(){
     return this.httpThang
     .get(
-      'http://localhost:3000/api/checklogin',
+      environment.apiBase + '/api/checklogin',
       { withCredentials: true }
     )
     //convert observable to a promise
     .toPromise()
     //parse the JSON
     .then(res => res.json())
+    .then((userInfo) => {
+      this.loginStatus(userInfo);
+      return userInfo;
+    })
   }// close checklogin
+
+  loginStatus(userStatus){
+    this.loggedInSource.next(userStatus);
+  }
 
 }

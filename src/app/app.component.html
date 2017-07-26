@@ -5,8 +5,8 @@
       <h1>app name and logo here</h1>
     </div>
     <div class="tools">
-      <a class="top-atag" [routerLink]="['/login']"><span class="glyphicon glyphicon-user"></span>      Login/Register</a>
-      <a *ngIf="!(isloggedin)" class="top-atag" [routerLink]="['settings']"><span class="glyphicon glyphicon-user"></span>     username </a>
+      <a *ngIf="!loggedIn" class="top-atag" [routerLink]="['/login']"><span class="glyphicon glyphicon-user"></span>      Login/Register</a>
+      <a *ngIf="loggedIn" class="top-atag" [routerLink]="['settings']"><span class="glyphicon glyphicon-user"></span>     {{ currentUser.username }} </a>
     </div>
   </div>
   <div class="bottom-nav">
@@ -15,9 +15,9 @@
         <div class="blah">
           <a class="atag" [routerLink]="['/']">Home</a>
           <a class="atag" [routerLink]="">Contact Us</a>
-          <a *ngIf="isloggedin" class="atag" [routerLink]="['register']">Register</a>
-          <a *ngIf="!(isloggedin)" class="atag" [routerLink]="['settings']">Settings</a>
-          <a *ngIf="!(isloggedin)" class="atag" [routerLink]="['/']">Logout</a>
+          <a *ngIf="!loggedIn" class="atag" [routerLink]="['register']">Register</a>
+          <a *ngIf="loggedIn" class="atag" [routerLink]="['settings']">Settings</a>
+          <a *ngIf="loggedIn" (click)="logMeOut()" class="atag" [routerLink]="['/']">Logout</a>
         </div>
       </nav>
     </div>
