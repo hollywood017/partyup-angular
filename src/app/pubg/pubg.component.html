@@ -1,6 +1,142 @@
-<form class="white" action="index.html" method="get">
+<form class="white" action="index.html" method="post">
   <h4>Insert PUBG Nickname</h4>
   <label for="pubg-input"></label>
   <input type="text" name="pubg-input" [(ngModel)]="pubgNameValue" placeholder="PUBG Nickname">
   <button class="" type="submit" (click)="doGetStats()" name="button">Enter</button>
 </form>
+
+
+<!-- only display this stuff below after it the enter button above is pressed -->
+<div class="username">
+    <img src="" alt=""> <!-- Avatar -->
+    <h1><!-- PlayerName --></h1>
+    <span>last updated a few seconds ago</span>
+</div>
+
+<div class="card">
+
+  <div class="card_title">
+    <h2><!-- .Stats.Match (solo) --></h2>
+    <button>View All Solo Stats</button>
+  </div>
+
+  <div class="rating">
+    <span><!-- Stats.index 0.Stats.index 9.label --></span>
+    <span><!-- Stats.index 0.Stats.index 9.displayValue --></span>
+  </div>
+
+  <div class="kd">
+    <span><!-- Stats.index 0.Stats.index 0.label --></span>
+     <span><!-- Stats.index 0.Stats.index 0.dispalyValue --></span>
+  </div>
+  <div class="win_percent">
+    <span><!-- Stats.index 0.Stats.index 1.label --></span>
+    <span><!-- Stats.index 0.Stats.index 1.dispalyValue --></span>
+  </div>
+
+  <div class="wins">
+    <span><!-- Stats.index 0.Stats.index 4.label --></span>
+    <span><!-- Stats.index 0.Stats.index 4.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten">
+    <span><!-- Stats.index 0.Stats.index 6.label --></span>
+    <span><!-- Stats.index 0.Stats.index 6.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten_rate">
+    <span><!-- Stats.index 0.Stats.index 7.label --></span>
+    <span><!-- Stats.index 0.Stats.index 7.dispalyValue --></span>
+  </div>
+
+  <div class="kills">
+    <span><!-- Stats.index 0.Stats.index 21.label --></span>
+    <span><!-- Stats.index 0.Stats.index 21.dispalyValue --></span>
+  </div>
+  <!-- close card -->
+</div>
+<!-- Start of DUOS -->
+<div class="card">
+
+  <div class="card_title">
+    <h2><!-- .Stats.Match (duo) --></h2>
+    <button>View All Duo Stats</button>
+  </div>
+
+  <div class="rating">
+    <span><!-- Stats.index 1.Stats.index 9.label --></span>
+    <span><!-- Stats.index 1.Stats.index 9.displayValue --></span>
+  </div>
+
+  <div class="kd">
+    <span><!-- Stats.index 1.Stats.index 0.label --></span>
+     <span><!-- Stats.index 1.Stats.index 0.dispalyValue --></span>
+  </div>
+  <div class="win_percent">
+    <span><!-- Stats.index 1.Stats.index 1.label --></span>
+    <span><!-- Stats.index 1.Stats.index 1.dispalyValue --></span>
+  </div>
+
+  <div class="wins">
+    <span><!-- Stats.index 1.Stats.index 4.label --></span>
+    <span><!-- Stats.index 1.Stats.index 4.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten">
+    <span><!-- Stats.index 1.Stats.index 6.label --></span>
+    <span><!-- Stats.index 1.Stats.index 6.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten_rate">
+    <span><!-- Stats.index 1.Stats.index 7.label --></span>
+    <span><!-- Stats.index 1.Stats.index 7.dispalyValue --></span>
+  </div>
+
+  <div class="kills">
+    <span><!-- Stats.index 1.Stats.index 21.label --></span>
+    <span><!-- Stats.index 1.Stats.index 21.dispalyValue --></span>
+  </div>
+</div>
+
+<!-- start of SQUAD -->
+<div class="card">
+
+  <div class="card_title">
+    <h2><!-- .Stats.Match (squad) --></h2>
+    <button>View All Squad Stats</button>
+  </div>
+
+  <div class="rating">
+    <span><!-- Stats.index 2.Stats.index 9.label --></span>
+    <span><!-- Stats.index 2.Stats.index 9.displayValue --></span>
+  </div>
+
+  <div class="kd">
+    <span><!-- Stats.index 2.Stats.index 0.label --></span>
+     <span><!-- Stats.index 2.Stats.index 0.dispalyValue --></span>
+  </div>
+  <div class="win_percent">
+    <span><!-- Stats.index 2.Stats.index 1.label --></span>
+    <span><!-- Stats.index 2.Stats.index 1.dispalyValue --></span>
+  </div>
+
+  <div class="wins">
+    <span><!-- Stats.index 2.Stats.index 4.label --></span>
+    <span><!-- Stats.index 2.Stats.index 4.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten">
+    <span><!-- Stats.index 2.Stats.index 6.label --></span>
+    <span><!-- Stats.index 2.Stats.index 6.dispalyValue --></span>
+  </div>
+
+  <div class="top_ten_rate">
+    <span><!-- Stats.index 2.Stats.index 7.label --></span>
+    <span><!-- Stats.index 2.Stats.index 7.dispalyValue --></span>
+  </div>
+
+  <div class="kills">
+    <span><!-- Stats.index 2.Stats.index 21.label --></span>
+    <span><!-- Stats.index 2.Stats.index 21.dispalyValue --></span>
+  </div>
+</div>
