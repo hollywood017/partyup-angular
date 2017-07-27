@@ -1,63 +1,68 @@
 <div class="container">
 <div class="search_bar">
   <form class="white" action="index.html" method="post">
-    <h4>Insert PUBG Nickname</h4>
     <label for="pubg-input"></label>
-    <input type="text" name="pubg-input" [(ngModel)]="pubgNameValue" placeholder="PUBG Nickname">
+    <input type="text" name="pubg-input" [(ngModel)]="pubgNameValue" placeholder="Enter your Battlegrounds User Name... ">
     <button class="" type="submit" (click)="doGetStats()" name="button">Enter</button>
   </form>
 
 </div>
 
 
-<!-- only display this stuff below after it the enter button above is pressed -->
-<div class="username">
-    <img src="{{ results.Avatar }}">
-    <h1>{{ results.PlayerName }}</h1>
-    <span>last updated a few seconds ago</span>
-</div>
-
-<div class="card">
-
-  <div class="card_title">
-    <h2>{{ results.Stats[0].Match }}</h2>
-    <button>View All Solo Stats</button>
+<div>
+  <div class="username">
+    <div class="avatar">
+      <img class='resize' src="{{ results.Avatar }}">
+    </div>
+    <div class="player_name">
+      <h1>{{ results.PlayerName }}</h1>
+    </div>
+    <div class="update">
+      <span>Last updated a few seconds ago</span>
+    </div>
   </div>
 
-  <div class="rating">
-    <span>{{ results.Stats[0].Stats[9].label }}</span>
-    <span>{{ results.Stats[0].Stats[9].displayValue }}</span>
-  </div>
+  <div class="card">
 
-  <div class="kd">
-    <span>{{ results.Stats[0].Stats[0].label }}</span>
-     <span>{{ results.Stats[0].Stats[0].displayValue }}</span>
-  </div>
-  <div class="win_percent">
-    <span>{{ results.Stats[0].Stats[1].label }}</span>
-    <span>{{ results.Stats[0].Stats[1].displayValue }}</span>
-  </div>
+    <div class="card_title">
+      <h2>{{ results.Stats[0].Match }}</h2>
+      <button>View All Solo Stats</button>
+    </div>
 
-  <div class="wins">
-    <span>{{ results.Stats[0].Stats[4].label }}</span>
-    <span>{{ results.Stats[0].Stats[4].displayValue }}</span>
-  </div>
+    <div class="rating">
+      <span class='label' >{{ results.Stats[0].Stats[9].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[9].displayValue }}</span>
+    </div>
 
-  <div class="top_ten">
-    <span>{{ results.Stats[0].Stats[6].label }}</span>
-    <span>{{ results.Stats[0].Stats[6].displayValue }}</span>
-  </div>
+    <div class="kd">
+      <span class='label' >{{ results.Stats[0].Stats[0].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[0].displayValue }}</span>
+    </div>
+    <div class="win_percent">
+      <span class='label' >{{ results.Stats[0].Stats[1].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[1].displayValue }}</span>
+    </div>
 
-  <div class="top_ten_rate">
-    <span>{{ results.Stats[0].Stats[7].label }}</span>
-    <span>{{ results.Stats[0].Stats[7].displayValue }}</span>
-  </div>
+    <div class="wins">
+      <span class='label' >{{ results.Stats[0].Stats[4].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[4].displayValue }}</span>
+    </div>
 
-  <div class="kills">
-    <span>{{ results.Stats[0].Stats[21].label }}</span>
-    <span>{{ results.Stats[0].Stats[21].displayValue }}</span>
-  </div>
-  <!-- close card -->
+    <div class="top_ten">
+      <span class='label' >{{ results.Stats[0].Stats[6].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[6].displayValue }}</span>
+    </div>
+
+    <div class="top_ten_rate">
+      <span class='label' >{{ results.Stats[0].Stats[7].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[7].displayValue }}</span>
+    </div>
+
+    <div class="kills">
+      <span class='label' >{{ results.Stats[0].Stats[21].label }}</span>
+      <span class='display' >{{ results.Stats[0].Stats[21].displayValue }}</span>
+    </div>
+    <!-- close card -->
   </div>
   <!-- Start of DUOS -->
   <div class="card">
@@ -68,80 +73,82 @@
     </div>
 
     <div class="rating">
-      <span>{{ results.Stats[1].Stats[9].label }}</span>
-      <span>{{ results.Stats[1].Stats[9].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[9].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[9].displayValue }}</span>
     </div>
 
     <div class="kd">
-      <span>{{ results.Stats[1].Stats[0].label }}</span>
-     <span>{{ results.Stats[1].Stats[0].displayValue }}</span>
-   </div>
-   <div class="win_percent">
-     <span>{{ results.Stats[1].Stats[1].label }}</span>
-     <span>{{ results.Stats[1].Stats[1].displayValue }}</span>
-   </div>
-
-   <div class="wins">
-     <span>{{ results.Stats[1].Stats[4].label }}</span>
-     <span>{{ results.Stats[1].Stats[4].displayValue }}</span>
-   </div>
-
-   <div class="top_ten">
-     <span>{{ results.Stats[1].Stats[6].label }}</span>
-     <span>{{ results.Stats[1].Stats[6].displayValue }}</span>
-   </div>
-
-   <div class="top_ten_rate">
-     <span>{{ results.Stats[1].Stats[7].label }}</span>
-     <span>{{ results.Stats[1].Stats[7].displayValue }}</span>
-   </div>
-
-   <div class="kills">
-     <span>{{ results.Stats[1].Stats[21].label }}</span>
-     <span>{{ results.Stats[1].Stats[21].displayValue }}</span>
-   </div>
- </div>
-
- <!-- start of SQUAD -->
- <div class="card">
-
-   <div class="card_title">
-     <h2>{{ results.Stats[2].Match }}</h2>
-     <button>View All Squad Stats</button>
-   </div>
-
-   <div class="rating">
-     <span>{{ results.Stats[2].Stats[9].label }}</span>
-     <span>{{ results.Stats[2].Stats[9].displayValue }}</span>
-   </div>
-
-    <div class="kd">
-      <span>{{ results.Stats[2].Stats[0].label }}</span>
-      <span>{{ results.Stats[2].Stats[0].displayValue }}</span>
-   </div>
+      <span class='label' >{{ results.Stats[1].Stats[0].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[0].displayValue }}</span>
+    </div>
     <div class="win_percent">
-      <span>{{ results.Stats[2].Stats[1].label }}</span>
-      <span>{{ results.Stats[2].Stats[1].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[1].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[1].displayValue }}</span>
     </div>
 
     <div class="wins">
-      <span>{{ results.Stats[2].Stats[4].label }}</span>
-      <span>{{ results.Stats[2].Stats[4].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[4].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[4].displayValue }}</span>
     </div>
 
     <div class="top_ten">
-      <span>{{ results.Stats[2].Stats[6].label }}</span>
-      <span>{{ results.Stats[2].Stats[6].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[6].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[6].displayValue }}</span>
     </div>
 
     <div class="top_ten_rate">
-      <span>{{ results.Stats[2].Stats[7].label }}</span>
-      <span>{{ results.Stats[2].Stats[7].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[7].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[7].displayValue }}</span>
     </div>
 
     <div class="kills">
-      <span>{{ results.Stats[2].Stats[21].label }}</span>
-      <span>{{ results.Stats[2].Stats[21].displayValue }}</span>
+      <span class='label' >{{ results.Stats[1].Stats[21].label }}</span>
+      <span class='display' >{{ results.Stats[1].Stats[21].displayValue }}</span>
     </div>
   </div>
+
+  <!-- start of SQUAD -->
+  <div class="card">
+
+    <div class="card_title">
+      <h2>{{ results.Stats[2].Match }}</h2>
+      <button>View All Squad Stats</button>
+    </div>
+
+    <div class="rating">
+      <span class='label' >{{ results.Stats[2].Stats[9].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[9].displayValue }}</span>
+    </div>
+
+    <div class="kd">
+      <span class='label' >{{ results.Stats[2].Stats[0].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[0].displayValue }}</span>
+    </div>
+    <div class="win_percent">
+      <span class='label' >{{ results.Stats[2].Stats[1].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[1].displayValue }}</span>
+    </div>
+
+    <div class="wins">
+      <span class='label' >{{ results.Stats[2].Stats[4].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[4].displayValue }}</span>
+    </div>
+
+    <div class="top_ten">
+      <span class='label' >{{ results.Stats[2].Stats[6].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[6].displayValue }}</span>
+    </div>
+
+    <div class="top_ten_rate">
+      <span class='label' >{{ results.Stats[2].Stats[7].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[7].displayValue }}</span>
+    </div>
+
+    <div class="kills">
+      <span class='label' >{{ results.Stats[2].Stats[21].label }}</span>
+      <span class='display' >{{ results.Stats[2].Stats[21].displayValue }}</span>
+    </div>
+  </div>
+</div>
+
 </div>
