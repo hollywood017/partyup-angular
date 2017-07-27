@@ -24,4 +24,5 @@ export class PubgService {
     .toPromise()
     .then(res => res.json())
   }//close pubgStats
+  
 }

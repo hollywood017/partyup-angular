@@ -1,13 +1,13 @@
-body{
-  background-image: url('../../assets/pubg_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.white{
+.container{
   color: white;
-}
+  // background-image: url('../../assets/pubg_bg.jpg');
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  .search-bar{
+    
 
-span{
-  color: #279FD6;
+  }
+  span{
+    color: #279FD6;
+  }
 }

@@ -10,6 +10,7 @@ import { PubgService } from '../services/pubg.service';
 export class PubgComponent implements OnInit {
 
   pubgNameValue: string;
+  results: {};
 
   constructor(
     private gameService: PubgService,
@@ -24,7 +25,7 @@ export class PubgComponent implements OnInit {
     console.log("getting stats is working");
     this.gameService.pubgStats(this.pubgNameValue)
     .then((resultFromApi) => {
-      console.log(resultFromApi);
+      this.results = resultFromApi;
     })
     .catch((err) => {
       alert('Error');
